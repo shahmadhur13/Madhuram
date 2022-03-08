@@ -1,0 +1,74 @@
+<Label>
+    font_size: 16
+    bold: True
+    size_hint: (None,None)
+    width: "100dp"
+    height: "30dp"
+<TextInput>
+    multiline: False
+    font_size: 22
+
+<Button>
+    font_size: 20
+    background_normal: ""
+<Registration>
+    first_name_input: f_name
+    last_name_input: l_name
+    age_input: age
+    mobile_input: mobile
+    address_input: address
+
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: (1, 0.8)
+            orientation: "vertical"
+            spacing: 5
+            padding: 10
+
+            Label:
+                text: "First Name"
+
+            TextInput:
+                multiline: False
+                id: f_name
+            Label:
+                text: "Last Name"
+
+            TextInput:
+                multiline: False
+                id: l_name
+            Label:
+                text: "Age"
+
+            TextInput:
+                multiline: False
+                id: age
+            Label:
+                text: "Mobile Number"
+
+            TextInput:
+                multiline: False
+                id: mobile
+            Label:
+                text: "Address"
+
+            TextInput:
+                multiline: False
+                id: address
+        GridLayout:
+            cols: 2
+            size_hint:(1,0.2)
+            spacing: 20
+            padding: 30
+
+            Button:
+                text: "Submit"
+                color: (0,0,0,1)
+                background_color: (0,1,0,1)
+                on_press: root.submit()
+            Button:
+                text: "Cancel"
+                background_color: (1,0,0,1)
+                on_press: root.cancel()
